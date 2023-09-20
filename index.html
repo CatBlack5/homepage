@@ -1,128 +1,180 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <!-- Meta, title, CSS, favicons, etc. -->
+<html lang="zh-CN">
+  
+  <head>
+      
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Dmego Home">
-    <meta name="keywords" content="Dmego,Homepage">
-    <meta name="author" content="Dmego">
-    <title>Dmego Home</title>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/dmego-home-page@latest/assets/css/onlinewebfonts.css"/>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/dmego-home-page@latest/assets/css/vno.css">
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/dmego-home-page@latest/assets/css/iconfont.css">
-    <link rel="apple-touch-icon" href="https://unpkg.com/dmego-home-page@latest/apple-touch-icon.png">
-    <link rel="icon" href="https://unpkg.com/dmego-home-page@latest/favicon.ico">
-</head>
+    <meta name="description" content="Cat_DC5's Home">
+    <meta name="keywords" content="Cat_DC5,Cat_DC5,CatDC5,Homepage">
+    <meta name="author" content="Dmego, Modified by Cat_DC5">
+    <title>Cat_DC5's Home</title>
+    <link rel="preload" href="./assets/css/all.css" as="style">
+    <link rel="preload" href="./assets/js/jquery.min.js" as="script">
+    <link rel="preload" href="./assets/img/avatar_256px.png" as="image">
+    <link rel="preload" href="./assets/js/jquery.min.js" as="script">
+    <link rel="stylesheet" type="text/css" href="./assets/css/all.css">
+    <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
+    <link rel="icon" href="./favicon.ico">
+    <script type="text/javascript">
+    
+    function preloadImg(url) {
+    img = new Image();
+    img.src = url;
+    }
+    function preloadImg_Change(url) {
+    img = new Image();
+    img.src = imgUrl;
+    img.onload = function(){
+     // 加载完成
+     getImages();
+    }
+}
+        //生成从minNum到maxNum的随机数
+        function Random(min, max) {
+            return Math.round(Math.random() * (max - min)) + min;
+        }
+        (function BeforeLoad(){
+            BeforeLoad_TMP();
+            // setInterval(function(){ChangeImage();}, 5000);
+        })();
 
-<body>
-    <span class="mobile btn-mobile-menu">
-        <i class="social iconfont icon-list btn-mobile-menu__icon"></i>
-        <i class="social iconfont icon-angleup btn-mobile-close__icon hidden"></i>
-    </span>
+        function BeforeLoad_TMP(){
+            var max = 17;//图片数量（在./assets/img/background/*.jpg，从1开始）
+            var index = Random(0,max-1);
+        	index = index + 1;
+        	imgUrl = "./assets/img/background/" + index.toString() + ".webp";
+        	setTimeout(preloadImg(imgUrl), 0);
+        }
+        function ChangeImage(){
+          BeforeLoad_TMP();
+          preloadImg_Change();
+        }
+        function Info(){
+          alert('Hi，这里是Cat_DC5。因为高三非常忙，博客和其他页面暂时没有精力来维护，见谅（虽然博客也基本没写过文章XD）。封闭式学校，基本没时间上线，有事可以发邮箱 home@catdc5.monster（或者点下面的邮箱按钮），看到了都会回哦');
+        }
+        function getImages() {
+        	var $panel = $('#panel');
+        	$panel.css("opacity", "0");
+        	$panel.css("transition", "background-image 0.5s");
+        	$panel.css("background", "url('" + imgUrl + "') center center no-repeat #666");
+        	$panel.css("background-size", "cover");
+        	$panel.css("opacity", "100");
+        // 	$panel.css("width", "125%");
+        // 	$panel.css("height", "125%");
+        //     $panel.mousemove(function(e){
+            
+        //     var amountMovedX = (e.pageX)/6-0.1*img.width;
+        //     var amountMovedY = (e.pageY)/6-0.1*img.height;
+            // if(amountMovedX>0){
+            //     amountMovedX=0;
+            // }
+            // if(amountMovedY>0){
+            //     amountMovedY=0;
+            // }
+            
+            // if(amountMovedX+img.width*1.25<window.screen.width){
+            //     amountMovedX=img.width*1.25-window.screen.width;
+            // }
+            // if(amountMovedY+img.height*1.25<window.screen.height){
+            //     amountMovedY=img.height*1.25-window.screen.height;
+            // }
+            //             if(window.screen.width>img.width | window.screen.height>img.height){
+            //     $panel.css("width", "100%");
+            //     $panel.css("height", "100%");
+            //     return;
+            // }
+            // $(this).css('background-position', amountMovedX + 'px ' +  amountMovedY + 'px');
+            // });
+        }
+
+    </script>
+    </head>
+    
+  <body onload="getImages()">
     <header id="panel" class="panel-cover">
-        <div class="panel-main">
-            <div class="panel-main__inner panel-inverted">
-                <div class="panel-main__content">
-                    <div class="ih-item circle effect right_to_left">            
-                        <a href="#" title="" class="blog-button">
-                            <div class="img"><img src="https://unpkg.com/dmego-home-page@latest/assets/img/logo3.jpg" alt="img" class="js-avatar iUp profilepic"></div>
-                            <div class="info iUp">
-                                <div class="info-back">
-                                    <h2> 
-                                        
-                                            Fighting
-                                        
-                                    </h2>
-                                    <p>
-                                        
-                                            2023 · 突破
-                                        
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <h1 class="panel-cover__title panel-title iUp">
-                        <a href="#" title="Dmego Home">Dmego</a>
-                    </h1>
-                    <p class="panel-cover__subtitle panel-subtitle iUp">Code Create Life</p>
-                    <hr class="panel-cover__divider iUp" />
-                    <p id="description" class="panel-cover__description iUp">如何得与凉风约, 不共尘沙一并来!
-                        <br/>
-                        <strong>-「中牟道中」</strong>
-                    </p>
-                    <div class="navigation-wrapper iUp">
-                        <div>
-                            <nav class="cover-navigation cover-navigation--primary">
-                                <ul class="navigation">
-                                    <li class="navigation__item">
-                                        <a href="/" class="blog-button">首页</a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <a href="https://dmego.cn" class="blog-button" target="_blank">博客</a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <a href="https://r.dmego.cn" class="blog-button" target="_blank">简历</a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <a href="https://dmego.cn/about/" class="blog-button" target="_blank">关于</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="iUp">
-                            <nav class="cover-navigation navigation--social">
-                                <ul class="navigation">
-                                    <li class="navigation__item">
-                                        <a href="https://github.com/dmego/" title="github" target="_blank">
-                                            <i class='social iconfont icon-github'></i>
-                                            <span class="label">github</span>
-                                        </a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <a href="http://www.cnblogs.com/dmego/" title="cnblogs" target="_blank">
-                                            <i class='social iconfont icon-cnblogs'></i>
-                                            <span class="label">cnblogs</span>
-                                        </a>
-                                    </li>
-
-                                    <li class="navigation__item">
-                                        <a href="https://www.zhihu.com/people/dmego/" title="zhihu" target="_blank">
-                                            <i class='social iconfont icon-zhihu'></i>
-                                            <span class="label">zhihu</span>
-                                        </a>
-                                    </li>
-                                    <li class="navigation__item">
-                                        <!-- 加密的邮箱地址, 请自行修改, 或者改用下方的明文方式 -->
-                                        <a href="javascript:decryptEmail('ZG1lYWdvQGdtYWlsLmNvbQ==');" title="email">
-                                        <!-- <a href="test@test.com" title="email"> -->
-                                            <i class='social iconfont icon-email'></i>
-                                            <span class="label">email</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
+      <div class="panel-main">
+        <div class="panel-main__inner panel-inverted">
+          <div class="panel-main__content">
+            <div class="ih-item circle effect right_to_left">
+              <div class="img">
+                <img src="./assets/img/avatar_256px.png" alt="img" class="js-avatar iUp profilepic"></div>
             </div>
-            <div class="panel-cover--overlay cover-slate"></div>
+            <h1 class="panel-cover__title panel-title iUp">
+              <a href="#" title="Cat_DC5 Blog">Cat_DC5</a></h1>
+            <p class="panel-cover__subtitle panel-subtitle iUp">加油！成为最强猫猫</p>
+            <hr class="panel-cover__divider iUp" />
+            <!--<p id="description" class="panel-cover__description iUp">鲁迅说过：我没说过！
+              <br/>
+              <strong>—「周树人」</strong></p>-->
+            <div class="navigation-wrapper iUp">
+              <div>
+                <nav class="cover-navigation cover-navigation--primary">
+                  <ul class="navigation">
+                    <li class="navigation__item">
+                      <a href="#" id="Info-button" class="blog-button" target="_self">关于</a></li>
+                    <li class="navigation__item">
+                      <a href="#" id="Background-button" class="blog-button" target="_self">换背景</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="iUp">
+                <nav class="cover-navigation navigation--social">
+                  <ul class="navigation">
+                    <li class="navigation__item">
+
+                    </li>
+                    <li class="navigation__item">
+                      <a href="https://github.com/CatDC5" title="Github" target="_blank">
+                        <i icon="github"></i>
+                        <span class="label">Github</span></a>
+                    </li>
+                    <li class="navigation__item">
+                      <a href="https://t.me/Cat_DC5" title="Telegram" target="_blank">
+                        <i icon="telegram"></i>
+                        <span class="label">Telegram</span></a>
+                    </li>
+                    <li class="navigation__item">
+                      <a href="mailto:home@catdc5.monster" title="Email">
+                        <i icon="email"></i>
+                        <span class="label">Email</span></a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- <div class="beian iUp">
-            <a class="icp" href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank">XXX</a>
-            <a class="gwab" href="http://www.beian.gov.cn/portal/recordQuery" target="_blank">XXX</a>
-        </div> -->
-        <div class="remark iUp">
-            <p class="power">Powered By 
-                <a href="https://github.com/features/actions" target="_blank"> GitHub Actions </a> And 
-                <a href="https://hitokoto.cn/" target="_blank"> Hitokoto </a>
-            </p>
-        </div>
+        <div class="panel-cover--overlay cover-slate"></div>
+      </div>
+      <div class="foot remark iUp">
+        <p class="power">Icon by 
+          <a href="https://fontawesome.com/icons/" target="_blank">Font Awesome</a></p><br/>
+        <p class="power">Modified from 
+          <a href="https://github.com/dmego/home.github.io" target="_blank">Dmego's Homepage</a></p><br/>
+      </div>
+      <div class="foot tips iUp">
+        <p class="power">Avatar 
+          <a href="https://www.bilibili.com/video/BV1s8411D7Qt/?t=4" target="_blank">source</a></p><br/>
+        <p class="power">Background  
+          <a href="https://space.bilibili.com/5632230/dynamic" target="_blank">source</a></p><br/>
+      </div>
     </header>
-    <script type="text/javascript" src="https://unpkg.com/dmego-home-page@latest/assets/js/main.js"></script>
-    <script type="text/javascript" src="./assets/json/images.json?cb=getBingImages"></script>
-</body>
+    <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+      <script type="text/javascript">
+          var iUp=(function(){var t=0,d=150,clean=function(){t=0},up=function(e){setTimeout(function(){$(e).addClass("up")},t);t+=d},down=function(e){$(e).removeClass("up")},toggle=function(e){setTimeout(function(){$(e).toggleClass("up")},t);t+=d};return{clean:clean,up:up,down:down,toggle:toggle}})();
+    $(document).ready(function () {
+
+	$(".iUp").each(function (i, e) {
+		iUp.up(e);
+	});
+  $("#Background-button").click(function() {
+      ChangeImage();
+  });
+  $("#Info-button").click(function() {
+      Info();
+  });
+});</script>
+  </body>
 </html>
