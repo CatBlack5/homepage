@@ -41,10 +41,10 @@
         })();
 
         function BeforeLoad_TMP(){
-            var max = 17;//图片数量（在./assets/img/background/*.jpg，从1开始）
+            var max = 16;//图片数量（在./assets/img/background/*.jpg，从1开始）
             var index = Random(0,max-1);
         	index = index + 1;
-        	imgUrl = "./assets/img/background/" + index.toString() + ".webp";
+        	imgUrl = "./assets/img/pt-webp/" + index.toString() + ".webp";
         	setTimeout(preloadImg(imgUrl), 0);
         }
         function ChangeImage(){
